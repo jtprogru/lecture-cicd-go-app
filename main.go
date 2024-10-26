@@ -18,6 +18,7 @@ func main() {
 	http.HandleFunc(Endpoint, MyMagicHandler)
 
 	fmt.Println("Приложение запускается на порту", Port)
+	fmt.Printf("Выполни запрос на http://127.0.0.1%s%s\n", Port, Endpoint)
 
 	if err := http.ListenAndServe(Port, nil); err != nil {
 		fmt.Println("ОШИБОЧКА!")
