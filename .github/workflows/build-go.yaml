@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    runs-on: goland:1.23.2
+    runs-on: golang:1.23.2
     steps:
       - name: Checkout
         uses: actions/checkout@v4
