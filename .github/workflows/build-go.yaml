@@ -5,7 +5,9 @@ on:
 
 jobs:
   build:
-    runs-on: golang:1.23.2
+    runs-on: ubuntu-latest
+    container:
+      image: golang:1.23.2
     steps:
       - name: Checkout
         uses: actions/checkout@v4
