@@ -17,6 +17,8 @@ func main() {
 
 	http.HandleFunc(Endpoint, MyMagicHandler)
 
+	fmt.Println("Приложение запускается на порту", Port)
+
 	if err := http.ListenAndServe(Port, nil); err != nil {
 		fmt.Println("ОШИБОЧКА!")
 	}
@@ -32,6 +34,8 @@ func MyMagicHandler(w http.ResponseWriter, r *http.Request) {
 	result := fmt.Sprintf("{'result' : %.3f}", C)
 
 	w.Header().Set("Content-Type", "application/json")
+
+	fmt.Printf("result is %.3f for %s\n", C, r.RemoteAddr)
 
 	_, _ = w.Write([]byte(result))
 
